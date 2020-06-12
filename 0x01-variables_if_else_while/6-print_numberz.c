@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-char al;
+short al;
 for (al = '0'; al <= '9'; al++)
 putchar(al);
 putchar('\n');
