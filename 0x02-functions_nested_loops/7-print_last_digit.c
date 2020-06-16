@@ -8,15 +8,15 @@ int print_last_digit(int d)
 {
 	int l;
 
+	l = d % 10;
 	if (d >= 0)
 	{
-		l = d % 10;
 		_putchar(l + '0');
 		return (l);
 	}
 	else
 	{
-		l = (d * -1) % 10;
+		l = l * -1;
 		_putchar(l + '0');
 		return (l);
 	}
