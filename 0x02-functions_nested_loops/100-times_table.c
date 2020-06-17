@@ -5,10 +5,10 @@
  */
 void print_times_table(int n)
 {
-	int f, c, r;
 
 	if (n >= 0 && n <= 15)
 	{
+		int f, c, r;
 
 		for (f = 0; f <= n; f++)
 		{
@@ -17,7 +17,7 @@ void print_times_table(int n)
 				r = f * c;
 				if (c == 0)
 					_putchar(r + '0');
-				if (c != 0 && r < 10)
+				else if (r < 10)
 				{
 					_putchar(',');
 					_putchar(' ');
