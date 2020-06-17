@@ -15,9 +15,7 @@ void print_times_table(int n)
 			{
 				r = f * c;
 				if (c == 0)
-				{
 					_putchar(r + '0');
-				}
 				else if (c != 0 && r < 10)
 				{
 					_putchar(',');
