@@ -72,3 +72,5 @@ int add(int, int);
  * Return: Always 0.
  */
 void print_to_98(int n);
+void print_times_table(int n);
+
