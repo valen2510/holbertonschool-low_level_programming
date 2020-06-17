@@ -66,3 +66,9 @@ void times_table(void);
  * Return: Always 0.
  */
 int add(int, int);
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+void print_to_98(int n);
