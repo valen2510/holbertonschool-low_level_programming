@@ -1,9 +1,8 @@
-#include <stdio.h>
+A#include <stdio.h>
 
 /**
  * main - causes an infinite loop
  * Return: 0
- * \\o/\n - emoji
  */
 
 int main(void)
