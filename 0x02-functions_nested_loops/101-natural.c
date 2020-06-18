@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
  * main - entry point
- *
+ * Return: sucess 0
  */
-void main(void)
+int main(void)
 {
 	int x, sum;
 
@@ -17,4 +17,5 @@ void main(void)
 	}
 
 	printf("sum = %d\n", sum);
+	return (0);
 }
