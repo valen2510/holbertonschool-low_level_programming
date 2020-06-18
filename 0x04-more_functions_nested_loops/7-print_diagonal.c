@@ -1,9 +1,9 @@
 #include "holberton.h"
+
 /**
- * print_diagonal - print n tines a \
+ * print_diagonal - print \ times
  * @n: times
- * Return: void
- **/
+ */
 void print_diagonal(int n)
 {
 	int i, e;
