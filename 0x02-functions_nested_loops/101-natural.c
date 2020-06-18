@@ -7,8 +7,11 @@ int main(void)
 {
 	int x, sum;
 
+	sum = 0;
+
 	for (x = 1023; x >= 0; x--)
 	{
+
 		if ((x % 3) == 0 || (x % 5) == 0)
 		{
 
