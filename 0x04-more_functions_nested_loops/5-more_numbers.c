@@ -9,7 +9,7 @@ void more_numbers(void)
 	char f, n;
 
 	f = 0;
-	while (f <= 10)
+	while (f < 10)
 	{
 		n = 0;
 		while (n <= 14)
