@@ -19,7 +19,7 @@ void print_number(int n)
 		_putchar('-');
 		_putchar(n + 48);
 	}
-	else 
+	else
 	{
 		if (n < 0)
 		{
@@ -36,13 +36,8 @@ void print_number(int n)
 		{
 			m = num / b;
 			num = num % b;
-			_putchar( m + 48);
+			_putchar(m + 48);
 			b = b / 10;
 		}
 	}
 }
-
-
-
-
-
