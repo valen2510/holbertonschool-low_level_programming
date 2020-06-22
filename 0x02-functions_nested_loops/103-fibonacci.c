@@ -5,13 +5,13 @@
  */
 int main(void)
 {
-	int t, n1, n2, n3, sum;
+	long int t, n1, n2, n3, sum;
 
 	n1 = 0;
 	n2 = 1;
 	sum = 0;
 
-	for (t = 0; t < 10; t++)
+	for (t = 0; t < 50; t++)
 	{
 		n3 = n1 + n2;
 
@@ -22,6 +22,6 @@ int main(void)
 		n1 = n2;
 		n2 = n3;
 	}
-	printf("%d\n", sum);
+	printf("%ld\n", sum);
 	return (0);
 }
