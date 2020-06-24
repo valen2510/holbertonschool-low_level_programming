@@ -7,7 +7,7 @@
 int _atoi(char *s)
 {
 	int sign = 0;
-	int r = 0;
+	unsigned int r = 0;
 
 	while (*s != '\0')
 	{
@@ -23,5 +23,6 @@ int _atoi(char *s)
 	}
 	if (sign % 2 != 0)
 		return (r * -1);
+
 	return (r);
 }
