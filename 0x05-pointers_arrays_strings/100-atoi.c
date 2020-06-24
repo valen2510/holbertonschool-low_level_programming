@@ -24,5 +24,4 @@ int _atoi(char *s)
 	if (sign % 2 != 0)
 		return (r * -1);
 	return (r);
-	}
 }
