@@ -15,17 +15,12 @@ char *_strcpy(char *dest, char *src)
 		i++;
 	}
 
-	n = 0;
-	while (n < i && src[n])
-	{
+	for (n = 0; n < i && src[n] != '\0'; n++)
 		dest[n] = src[n];
-		n++;
-	}
-	while (n < i)
-	{
+
+	for (; n < i; n++)
 		dest[n] = '\0';
-		n++;
-	}
+
 	return (dest);
 }
 
