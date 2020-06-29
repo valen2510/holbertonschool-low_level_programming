@@ -1,4 +1,4 @@
-#include "hoLberton.h"
+#include "holberton.h"
 /**
  * _strchr -locate a character ina a string
  * @s: string pointer
