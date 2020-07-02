@@ -14,15 +14,21 @@ int _sqrt_recursion(int n)
 	else
 		return (factor(n, 2));
 }
+/**
+ * factor - find sqrt root factor
+ * @n: entry value
+ * @a: Sqrt root
+ * Return: a (Success) -1 (Not Found)
+ */
 
 int factor(int n, int a)
 {
-        if (a * a == n)
-                return (a);
+	if ((a * a) == n)
+		return (a);
 
-        if (a * a > n)
-                return (-1);
+	if ((a * a) > n)
+		return (-1);
 
-        else
-                return (factor(n, a + 1));
+	else
+		return (factor(n, a + 1));
 }
