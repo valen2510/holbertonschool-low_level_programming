@@ -12,4 +12,7 @@ int is_prime_number(int n);
 int is_palindrome(char *s);
 int factor(int n, int a);
 int prime(int n, int d);
+int length(char *s);
+int find_palindrome(char *s, int start, int end);
+
 #endif
