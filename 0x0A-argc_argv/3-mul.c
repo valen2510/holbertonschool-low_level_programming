@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv)
 {
-	int n1, n2;
+	unsigned int n1, n2;
 
 	if (argc < 2)
 	{
