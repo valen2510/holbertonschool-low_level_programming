@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include "holberton.h"
 /**
  * main - Entry point. Add numbers.
  * @argc: argument counter
@@ -19,10 +21,11 @@ int main(int argc, char **argv)
 
 	for (i = 1; i < argc; i++)
 	{
-		n = atoi(argv[i]);
-
-		if (n > 0)
+		if (digit(argv[i]))
+		{
+			n = atoi(argv[i]);
 			sum += n;
+		}
 		else
 		{
 			printf("Error\n");
@@ -31,4 +34,21 @@ int main(int argc, char **argv)
 	}
 	printf("%d\n", sum);
 	return (0);
+}
+
+/**
+ * digit - find if character is digit
+ * @s: String pointer
+ * Return: 0 (Not found) 1 (Success)
+ */
+int digit(char *s)
+{
+	int j;
+
+	for (j = 0; s[j] != '\0'; j++)
+	{
+		if (!isdigit(s[j]))
+			return (0);
+	}
+	return (1);
 }
