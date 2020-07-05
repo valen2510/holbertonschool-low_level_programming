@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *
- *
- *
+ * main - Entry point. Add numbers.
+ * @argc: argument counter
+ * @argv: argument vector
+ * Return: 0 (Success) 1 (Error)
  */
 int main(int argc, char **argv)
 {
@@ -28,8 +29,6 @@ int main(int argc, char **argv)
 			return (1);
 		}
 	}
-	
 	printf("%d\n", sum);
-	
 	return (0);
 }
