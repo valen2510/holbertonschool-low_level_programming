@@ -29,11 +29,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			*p++ = *s1, s1++;
 		while (*s2)
 			*p++ = *s2, s2++;
-		*p = '\0';
 	}
 	else
 	{
-		p = malloc(sizeof(char) * (ls1 + n));
+		p = malloc(sizeof(char) * (ls1 + n + 1));
 		temp = p;
 		if (!p)
 			return (NULL);
