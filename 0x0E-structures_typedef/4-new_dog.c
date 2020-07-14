@@ -23,7 +23,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new = malloc(sizeof(struct dog));
 
 	if (!new)
+	{
+		free(new);
 		return (NULL);
+	}
 
 	new->name = copyname;
 	new->age = age;
@@ -48,7 +51,10 @@ char *copys(char *s1, char *s2)
 	s1 = malloc(sizeof(char) * (i + 1));
 
 	if (!s1)
+	{
+		free(s1);
 		return (NULL);
+	}
 
 	for (n = 0; n <= i; n++)
 		s1[n] = s2[n];
