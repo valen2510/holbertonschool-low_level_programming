@@ -17,6 +17,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	copyname = NULL;
 	copyowner = NULL;
 
+	new = malloc(sizeof(struct dog));
+
+	if (!new)
+	{
+		free(new);
+		return (NULL);
+	}
+
 	copyname = copys(copyname, name);
 	copyowner = copys(copyowner, owner);
 
@@ -24,13 +32,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		free(copyname);
 		free(copyowner);
-		return (NULL);
-	}
-
-	new = malloc(sizeof(struct dog));
-
-	if (!new)
-	{
 		free(new);
 		return (NULL);
 	}
