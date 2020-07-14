@@ -13,6 +13,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *copyname;
 	char *copyowner;
 
+	new = NULL;
 	copyname = NULL;
 	copyowner = NULL;
 
