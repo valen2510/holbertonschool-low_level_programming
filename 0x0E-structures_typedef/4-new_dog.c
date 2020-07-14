@@ -20,6 +20,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	copyname = copys(copyname, name);
 	copyowner = copys(copyowner, owner);
 
+	if (!copyowner || !copyname)
+	{
+		free(copyname);
+		free(copyowner);
+		return (NULL);
+	}
+
 	new = malloc(sizeof(struct dog));
 
 	if (!new)
@@ -51,10 +58,7 @@ char *copys(char *s1, char *s2)
 	s1 = malloc(sizeof(char) * (i + 1));
 
 	if (!s1)
-	{
-		free(s1);
 		return (NULL);
-	}
 
 	for (n = 0; n <= i; n++)
 		s1[n] = s2[n];
