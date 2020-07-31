@@ -11,7 +11,8 @@ unsigned int binary_to_uint(const char *b)
 	conv_number = 0;
 	exp = 0;
 
-	b = _end_string(b);
+	if (b)
+		b = _end_string(b);
 
 	if (!b)
 		return (0);
