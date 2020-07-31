@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+const char *_end_string(const char *ptr);
+int _pow(int base, int exp);
 int _putchar(char c);
 unsigned int binary_to_uint(const char *b);
 void print_binary(unsigned long int n);
