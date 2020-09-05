@@ -6,7 +6,7 @@
 **/
 size_t dlistint_len(const dlistint_t *h)
 {
-	int elements_number = 0;
+	unsigned int elements_number = 0;
 
 	while (h)
 	{
