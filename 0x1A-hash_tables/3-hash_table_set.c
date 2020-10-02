@@ -10,7 +10,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *element = NULL;
 	unsigned long int index = 0;
-	int match = 1;
 
 	if (!ht || !key || !(*key) || !value)
 		return (0);
@@ -19,8 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!index)
 		return (0);
 
-	match = match_element(key, ht->array[index], value);
-	if (!match)
+	if (ht->array[index] && !(match_element(key, ht->array[index], value)))
 		return (1);
 
 	element = malloc(sizeof(hash_node_t));
@@ -31,7 +29,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	element->next = NULL;
 	if (!(element->key) || !(element->value))
 	{
-		if (!(element->value) && element->key)
+		if (element->key)
 			free(element->key);
 		free(element);
 		return (0);
