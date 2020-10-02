@@ -9,7 +9,6 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *element = NULL;
-	hash_node_t *current = NULL;
 	unsigned long int index = 0;
 	int match = 1;
 
@@ -20,8 +19,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!index)
 		return (0);
 
-	current = ht->array[index];
-	match = match_element(key, current, value);
+	match = match_element(key, ht->array[index], value);
 	if (!match)
 		return (1);
 
@@ -30,6 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	element->key = strdup(key);
 	element->value = strdup(value);
+	element->next = NULL;
 	if (!(element->key) || !(element->value))
 	{
 		free(element);
@@ -38,14 +37,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
-	if (current)
+	if (ht->array[index] != NULL)
 	{
-		element->next = current;
-		current = element;
+		element->next = ht->array[index];
+		ht->array[index] = element;
 		return (1);
 	}
-	element->next = NULL;
-	current = element;
+	ht->array[index] = element;
 	return (1);
 }
 /**
