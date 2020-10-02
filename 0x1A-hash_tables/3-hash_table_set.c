@@ -9,24 +9,33 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *element = NULL;
+	hash_node_t *match = NULL;
 	unsigned long int index = 0;
 
 	if (!ht || !key || !(*key) || !value)
 		return (0);
-
 	index = key_index((const unsigned char *)key, ht->size);
 	if (!index)
 		return (0);
-
-	if (ht->array[index] && !(match_element(key, ht->array[index], value)))
-		return (1);
-
+	if (ht->array[index])
+	{
+		match = ht->array[index];
+		while (match)
+		{
+			if (!(strcmp(match->key, key)))
+			{
+				free(match->value);
+				match->value = strdup(value);
+				return (1);
+			}
+		match = match->next;
+		}
+	}
 	element = malloc(sizeof(hash_node_t));
 	if (!element)
 		return (0);
 	element->key = strdup(key);
 	element->value = strdup(value);
-	element->next = NULL;
 	if (!(element->key) || !(element->value))
 	{
 		if (element->key)
@@ -34,36 +43,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(element);
 		return (0);
 	}
-
-	if (ht->array[index] != NULL)
-	{
-		element->next = ht->array[index];
-		ht->array[index] = element;
-		return (1);
-	}
+	element->next = ht->array[index];
 	ht->array[index] = element;
-	return (1);
-}
-/**
- * match_element - Check if a key value is already in a bucket.
- * @key: key
- * @array: bucket
- * @value: node value to update
- * Return: 1(No match Found) 0 (Match Found)
- */
-int match_element(const char *key, hash_node_t *array, const char *value)
-{
-	hash_node_t *match = array;
-
-	while (match)
-	{
-		if (strcmp(match->key, key) == 0)
-		{
-			free(match->value);
-			match->value = strdup(value);
-			return (0);
-		}
-		match = match->next;
-	}
 	return (1);
 }
