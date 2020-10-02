@@ -31,9 +31,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	element->next = NULL;
 	if (!(element->key) || !(element->value))
 	{
-		free(element);
-		if (!element->value && element->key)
+		if (!(element->value) && element->key)
 			free(element->key);
+		free(element);
 		return (0);
 	}
 
