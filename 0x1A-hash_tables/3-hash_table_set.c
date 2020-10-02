@@ -31,7 +31,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	element->key = strdup(key);
 	element->value = strdup(value);
 	if (!(element->key) || !(element->value))
+	{
+		free(element);
+		if (!element->value)
+			free(element->key);
 		return (0);
+	}
 
 	if (ht->array[index])
 	{
@@ -58,9 +63,15 @@ int match_element(const char *key, hash_node_t *array, const char *value)
 	{
 		if (strcmp(match->key, key) == 0)
 		{
+			free(match->value);
 			match->value = strdup(value);
 			if (!(match->value))
+			{
+				free(match->key);
+				free(match->value);
+				free(match);
 				return (-1);
+			}
 			return (0);
 		}
 		match = match->next;
