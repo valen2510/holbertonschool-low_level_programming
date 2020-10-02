@@ -14,8 +14,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!ht || !(ht->array) || !key || !(*key) || !value)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	if (!index)
-		return (0);
 	aux = ht->array[index];
 	if (aux)
 	{
