@@ -1,4 +1,3 @@
-#include <math.h>
 #include "search_algos.h"
 /**
  * jump_search - function that searches for a value
@@ -11,7 +10,6 @@
 int jump_search(int *array, size_t size, int value)
 {
 	size_t i, step = sqrt(size), post_i = 0;
-	int index = -1;
 
 	if (!array)
 		return (-1);
@@ -32,10 +30,7 @@ int jump_search(int *array, size_t size, int value)
 	{
 		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
 		if (array[i] == value)
-		{
-			index = array[i];
-			break;
-		}
+			return ((int)i);
 	}
-	return (index);
+	return (-1);
 }
